@@ -1,5 +1,7 @@
 # Hstorly
 
+[![Build Status](https://travis-ci.org/hendricius/multilang-hstore.svg)](https://travis-ci.org/hendricius/multilang-hstore)
+
 This project is a fork of the amazing [bithavoc/multilang-hstore](https://github.com/bithavoc/multilang-hstore) with some remarkable differences.
 
 * Focus on performance. Especially when dealing with millions of records,
@@ -36,7 +38,7 @@ We're assuming here you want a Post model with some multilang attributes, as out
 The multilang translations are stored in the same model attributes (eg. title):
 
 You may need to create migration for Post as usual, but multilang attributes should be in hstore type:
- 
+
     create_table(:posts) do |t|
       t.hstore :title
       t.timestamps
