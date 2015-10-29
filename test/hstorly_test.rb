@@ -65,6 +65,12 @@ describe Hstorly do
         post = TestPost.new(title_en: "wurst")
         assert_equal "wurst", post.title_en
       end
+      it "allows setting the value again after it was set already" do
+        I18n.locale = :en
+        post = TestPost.new(title_en: "wurst")
+        post.title = "hans"
+        assert_equal "hans", post.title
+      end
     end
 
     describe "#setting a hash" do

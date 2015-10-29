@@ -22,7 +22,7 @@ module Hstorly
             if value.is_a?(Hash)
               write_attribute attribute, value
             elsif self[attribute].present?
-              write_attribute attribute, send(attribute).merge({I18n.locale => value })
+              write_attribute attribute, self[attribute].merge({I18n.locale => value })
               value
             else
               write_attribute attribute, {I18n.locale => value }
