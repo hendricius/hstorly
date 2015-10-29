@@ -67,6 +67,17 @@ describe Hstorly do
       end
     end
 
+    describe "#setting a hash" do
+      it "allows setting a hash" do
+        post = TestPost.new
+        translations_hash = {"en" => "foobar", "de" => "foobarde"}
+        post.title = translations_hash
+        assert_equal "foobar", post.title_en
+        assert_equal "foobarde", post.title_de
+        assert_equal translations_hash, post.title_before_type_cast
+      end
+    end
+
     describe "#save" do
       it "saved the data properly and is still there after reload" do
         I18n.locale = :en

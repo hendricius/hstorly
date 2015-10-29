@@ -19,7 +19,9 @@ module Hstorly
           #
           # returns the new value
           define_method "#{attribute}=" do |value|
-            if self[attribute].present?
+            if value.is_a?(Hash)
+              write_attribute attribute, value
+            elsif self[attribute].present?
               write_attribute attribute, send(attribute).merge({I18n.locale => value })
               value
             else
