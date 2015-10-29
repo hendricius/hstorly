@@ -5,15 +5,13 @@
 This project is a fork of the amazing [bithavoc/multilang-hstore](https://github.com/bithavoc/multilang-hstore) with some remarkable differences.
 
 * Focus on performance. Especially when dealing with millions of records,
-  every operation counts. We use this gem to handle millions of records and perform
-  costly operations.
-* Remove a lot of features, focus on the core features. It's really just the translation logic,
-  no validations nothing. That's not part of this gem.
-* Make sure this works in a multi threaded environment.
+  every operation counts.
+* Remove a lot of features, focus on the core features.
+* Due to focus on core features, better thread safety.
 
 ## Performance ##
 
-1. 1,000,000 read operations
+**1,000,000 translation read operations**
 
 hstorly:
 ```
@@ -26,7 +24,7 @@ multilang-hstore:
 ```
 
 
-2. Setting a new translation entry.
+**Setting a new translation entry, 100,000 times**
 
 hstorly:
 ```
@@ -38,7 +36,7 @@ multilang-hstore:
   6.860000   0.030000   6.890000 (  6.892723)
 ```
 
-3. Setting a completely new object with translations `{"de" => "foobar"}`
+**Setting a completely new object with translations 100,000 times**
 
 hstorly:
 
