@@ -67,5 +67,14 @@ describe Hstorly do
       end
     end
 
+    describe "#save" do
+      it "saved the data properly and is still there after reload" do
+        I18n.locale = :en
+        post = TestPost.new(title: "wurst")
+        post.save!
+        assert_equal "wurst", post.reload.title_en
+      end
+    end
+
   end
 end
