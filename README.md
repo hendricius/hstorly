@@ -1,6 +1,6 @@
 # Hstorly
 
-[![Build Status](https://travis-ci.org/hendricius/multilang-hstore.svg)](https://travis-ci.org/hendricius/multilang-hstore)
+[![Build Status](https://travis-ci.org/hendricius/hstorly.svg?branch=master)](https://travis-ci.org/hendricius/hstorly)
 
 This project is a fork of the amazing [bithavoc/multilang-hstore](https://github.com/bithavoc/multilang-hstore) with some remarkable differences.
 
