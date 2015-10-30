@@ -25,5 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry", "~> 0.1"
   spec.add_development_dependency 'pg', '~> 0.0'
 
-  spec.add_dependency 'activerecord', '~> 4.0'
+  spec.add_dependency 'activerecord', '>= 4.0'
+  spec.add_dependency 'pg'
 end
