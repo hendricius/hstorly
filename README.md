@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/hendricius/hstorly.svg?branch=master)](https://travis-ci.org/hendricius/hstorly)
 
+Hstorly is a small translation library for translating database values for Active Support/Rails 4 using the Hstore datatype of your Postgres database.
+
 This project is a fork of the amazing [bithavoc/multilang-hstore](https://github.com/bithavoc/multilang-hstore) with some remarkable differences.
 
 * Focus on performance. Especially when dealing with millions of records,
