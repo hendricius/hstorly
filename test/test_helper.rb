@@ -12,12 +12,8 @@ require 'hstorly'
 # Let's do our active record setup with the proper database
 ActiveRecord::Base.logger = Logger.new(nil)
 ActiveRecord::Base.establish_connection(adapter: "postgresql", host: '127.0.0.1')
-begin
-ActiveRecord::Base.connection.execute('CREATE DATABASE "multilang-hstore-test"')
-rescue ActiveRecord::StatementInvalid
-  puts "Database already exists"
-end
-ActiveRecord::Base.establish_connection(adapter: "postgresql", database: "multilang-hstore-test", host: '127.0.0.1')
+ActiveRecord::Base.connection.execute('CREATE DATABASE translation_test')
+ActiveRecord::Base.establish_connection(adapter: "postgresql", database: "translation_test", host: '127.0.0.1')
 ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS hstore;')
 
 # i18n setup
