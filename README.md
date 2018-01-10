@@ -1,6 +1,6 @@
 # Hstorly
 
-[![Build Status](https://travis-ci.org/hendricius/hstorly.svg?branch=master)](https://travis-ci.org/hendricius/hstorly)
+[![CircleCI](https://circleci.com/gh/hendricius/hstorly.svg?style=svg)](https://circleci.com/gh/hendricius/hstorly)
 
 Hstorly is a small translation library for translating database values for Active Support/Rails 4 using the Hstore datatype of your Postgres database.
 
