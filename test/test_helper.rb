@@ -9,16 +9,14 @@ require 'active_record'
 require 'pry'
 require 'hstorly'
 
+# Let's do our active record setup with the proper database
 ActiveRecord::Base.logger = Logger.new(nil)
-ActiveRecord::Base.establish_connection(:adapter => "postgresql", :host=>'127.0.0.1', :user=>'postgres')
-begin
-ActiveRecord::Base.connection.execute('CREATE DATABASE "multilang-hstore-test" WITH OWNER postgres;')
-rescue ActiveRecord::StatementInvalid
-  puts "Database already exists"
-end
-ActiveRecord::Base.establish_connection(:adapter => "postgresql", :database => "multilang-hstore-test", :host=>'127.0.0.1', :user=>'postgres')
+ActiveRecord::Base.establish_connection(adapter: "postgresql", host: '127.0.0.1')
+ActiveRecord::Base.connection.execute('CREATE DATABASE translation_test')
+ActiveRecord::Base.establish_connection(adapter: "postgresql", database: "translation_test", host: '127.0.0.1')
 ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS hstore;')
 
+# i18n setup
 I18n.enforce_available_locales = false
 I18n.available_locales = [:en, :de]
 I18n.locale = I18n.default_locale = :de
@@ -40,5 +38,5 @@ end
 
 class TestPost < ActiveRecord::Base
   self.table_name = 'abstract_posts'
-  hstore_translate :title
+  hstore_translate :title, :summary
 end

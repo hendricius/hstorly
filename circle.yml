@@ -1,0 +1,14 @@
+machine:
+  ruby:
+    version: 2.4.1
+
+test:
+  pre:
+    - bundle install
+
+  override:
+    - bundle exec rake test
+
+dependencies:
+  override:
+    - gem install bundler && (bundle check --path=/home/ubuntu/.bundle || bundle install --path=/home/ubuntu/.bundle --jobs=2 --retry=5)
