@@ -73,6 +73,14 @@ describe Hstorly do
       end
     end
 
+    describe "json support" do
+      it "also works with json columns" do
+        I18n.locale = :en
+        post = TestPost.new(summary_en: "wurst")
+        assert_equal "wurst", post.summary_en
+      end
+    end
+
     describe "#setting a hash" do
       it "allows setting a hash" do
         post = TestPost.new
