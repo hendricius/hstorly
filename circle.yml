@@ -3,11 +3,12 @@ machine:
     version: 2.4.1
 
 test:
-  pre:
-    - bundle install
-
   override:
     - bundle exec rake test
+
+database:
+  override:
+    - echo "Skipping database install..."
 
 dependencies:
   override:
